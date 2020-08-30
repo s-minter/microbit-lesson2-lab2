@@ -22,9 +22,27 @@ function drawSquare () {
         }
     }
 }
+function drawTriangleV2 () {
+    for (let column = 0; column <= 4; column++) {
+        for (let row = 0; row <= 4; row++) {
+            if (row + column <= 4) {
+                led.plot(column, row)
+            }
+        }
+    }
+}
 function drawDiagonal () {
     for (let index = 0; index <= 4; index++) {
         led.plot(index, index)
     }
 }
-drawTriangle()
+function drawCheckerboard () {
+    for (let column = 0; column <= 4; column++) {
+        for (let row = 0; row <= 4; row++) {
+            if ((row + column) % 2 == 0) {
+                led.plot(column, row)
+            }
+        }
+    }
+}
+drawCheckerboard()
